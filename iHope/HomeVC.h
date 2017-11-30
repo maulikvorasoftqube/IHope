@@ -10,4 +10,9 @@
 
 @interface HomeVC : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *btnMenu;
+- (IBAction)btnMenu:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionCategory;
+
 @end
