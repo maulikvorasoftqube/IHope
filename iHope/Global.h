@@ -17,8 +17,14 @@
 
 #import "HomeVC.h"
 
+#import "Utility.h"
 #import "Menu.h"
 #import "KYDrawerController.h"
+#import "WToast.h"
+#import "ContactusVC.h"
+
+#import "CellWithImage.h"
+#import "CellWithNote.h"
 
 
 #endif /* Global_h */

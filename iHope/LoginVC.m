@@ -7,6 +7,7 @@
 //
 
 #import "LoginVC.h"
+#import "Global.h"
 
 @interface LoginVC ()
 
@@ -28,12 +29,38 @@
     self.btnLogin.layer.cornerRadius=4;
     self.btnLogin.clipsToBounds=YES;
     
+    
+    NSString *UserEmail=[[NSUserDefaults standardUserDefaults]objectForKey:@"UserEmail"];
+    if (UserEmail.length != 0)
+    {
+        UIViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 
 #pragma mark - UIButton Action
 
 - (IBAction)btnLogin:(id)sender
 {
+   /* if ([Utility validateBlankField:self.txtEmailid.text]) {
+        [WToast showWithText:@"Please enter email!"];
+        return;
+    }
+    if ([Utility validateBlankField:self.txtPwd.text]) {
+        [WToast showWithText:@"Please enter password!"];
+        return;
+    }
+    if (![Utility validateEmailWithString:self.txtEmailid.text]) {
+        [WToast showWithText:@"Please enter valid email!"];
+        return;
+    }
+    */
+    
+    NSString *strEmail=self.txtEmailid.text;
+    [[NSUserDefaults standardUserDefaults]setObject:strEmail forKey:@"UserEmail"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
     UIViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
     [self.navigationController pushViewController:vc animated:YES];
 }

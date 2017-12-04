@@ -12,6 +12,8 @@
 #import "Menu.h"
 #import "KYDrawerController.h"
 #import "Global.h"
+
+
 @implementation Menu
 
 
@@ -20,34 +22,94 @@
     [tableView deselectRowAtIndexPath:newIndexPath animated:YES];
     
     KYDrawerController *elDrawer = (KYDrawerController*)self.navigationController.parentViewController;
-    /*MainViewControllerObjc *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainController"];
-    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:viewController];*/
-    switch ([newIndexPath row]) {
-        case 0:{
-            
-            
-          //  [viewController.view setBackgroundColor:[UIColor redColor]];
-            
-           
+   
+    UINavigationController *navController;
+    switch ([newIndexPath row])
+    {
+        case 0:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeVC"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
             break;
         }
-        
-        case 1:{
+        case 1:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeVC"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+            break;
+        }
+        case 2:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"itemListVc"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+            break;
+        }
+        case 3:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"itemListVc"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+            break;
+        }
+        case 4:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"itemListVc"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+            break;
+        }
+        case 5:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"itemListVc"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
 
-          //   [viewController.view setBackgroundColor:[UIColor blueColor]];
+            break;
+        }
+        case 6:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"itemListVc"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+
+            break;
+        }
+        case 7:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"itemListVc"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+
+            break;
+        }
+        case 8:
+        {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ContactusVC"];
+            navController=[[UINavigationController alloc]initWithRootViewController:viewController];
+            navController.navigationBarHidden=YES;
+            elDrawer.mainViewController=navController;
+
             break;
         }
             
         default:{
-            // [viewController.view setBackgroundColor:[UIColor whiteColor]];
+            
             break;
         }
             
-            
-            
-        
     }
-    // elDrawer.mainViewController=navController;
+    
     [elDrawer setDrawerState:KYDrawerControllerDrawerStateClosed animated:YES];
 }
 
